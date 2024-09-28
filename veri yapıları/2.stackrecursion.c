@@ -14,3 +14,4 @@ void main()
 }
 
 //normal çıktısı 123456789987654321
+//ilk printf olmeksizin(b.a.y) çıktısı 987654321
