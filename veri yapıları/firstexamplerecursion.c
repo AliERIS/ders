@@ -1,4 +1,4 @@
-//verilern bir sayının faktörüyelini hesaplayan rekürsif bir fonksiyonu C dilinde yaz 
+//verilern bir sayının faktöriyelini hesaplayan rekürsif bir fonksiyonu C dilinde yaz 
 
 #include "stdio.h"
 
