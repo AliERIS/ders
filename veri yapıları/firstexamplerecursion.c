@@ -2,9 +2,26 @@
 
 #include "stdio.h"
 
+int recursion(int b)
+{
+if(b==0)
+{
+    return 1;
+}
+else 
+{
+    return b*recursion(b-1);
+}
+
+
+}
+
+
 int main()
 {
-printf("hello world"); //first thing off
+int sonuc;
+sonuc = recursion(5);
+printf("%d\n",sonuc);
 
 
 }
