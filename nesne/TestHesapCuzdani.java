@@ -14,6 +14,19 @@ public static void main(String[] args)
     System.out.printf("Birinci hesap cüzdanı nakiye: %8.2f\n",hesapCuzdani1.getBakiye());
     System.out.printf("İkinci hesap cüzdanı nakiye: %8.2f\n",hesapCuzdani2.getBakiye());
 
+    HesapCuzdani aliCuzdani = new  HesapCuzdani(16.00);
+    HesapCuzdani abdvCuzdani = new  HesapCuzdani(32.00);
+
+    System.out.printf("Birinci hesap cüzdanı nakiye: %8.2f\n",aliCuzdani.getBakiye());
+    System.out.printf("İkinci hesap cüzdanı nakiye: %8.2f\n",abdvCuzdani.getBakiye());
+    System.out.println("ne kaa para yatacak");
+    yatanPara=klavye.nextDouble();
+    aliCuzdani.paraYatir(yatanPara);
+    System.out.printf("Birinci hesap cüzdanı nakiye: %8.2f\n",aliCuzdani.getBakiye());
+    System.out.println("ne kaa para yatacak");
+    yatanPara=klavye.nextDouble();
+    abdvCuzdani.paraYatir(yatanPara);
+    System.out.printf("Birinci hesap cüzdanı nakiye: %8.2f\n",abdvCuzdani.getBakiye());
 }
 
     
