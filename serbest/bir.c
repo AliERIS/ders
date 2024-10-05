@@ -41,8 +41,8 @@ mesutozil.atk = 86;
 mesutozil.def = 20;
 mesutozil.age = 22; //kitap ayracını olduğun yere değil olmak istediğin yere koyacaksın
 
-ozellik_bastir(mesutozil);
+/*ozellik_bastir(mesutozil);
 
 
 
-}
+}  */
