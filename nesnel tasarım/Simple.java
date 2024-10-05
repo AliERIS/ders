@@ -3,3 +3,5 @@ class Simple2{
      System.out.println("Hello Java");  
     }  
 }  
+
+//yusuf bey ben korksun istedim ölsün istemedim ki
