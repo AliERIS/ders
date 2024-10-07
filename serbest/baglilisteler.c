@@ -25,7 +25,7 @@ struct node *addlast(struct node *head, int x)
     struct node *temp = (struct node *)malloc(sizeof(struct node));
     temp -> data = x;
     temp -> next = NULL;
-    if (head = NULL)
+    if (head == NULL)
         head = temp;
     else {
         struct node *last = head;
@@ -61,6 +61,20 @@ void printlist( struct node *head)
 }
 
 
+//listenin elemanlarını tersten yazma
+void print_reverse(struct node *head){
+
+    if(head==NULL)
+    return;
+    print_reverse(head->next);
+    
+    printf("%4d",head->data);
+
+
+
+}
+
+
 
 
 
@@ -72,13 +86,13 @@ struct node *head =NULL;
 head = addlast(head,8);
 head = addfront (head,5);
 head = addlast (head,2);
+printlist(head);
+print_reverse(head);
 
 
 
 
-
-
-return 0;    
+//return 0;    
 }
 
 
