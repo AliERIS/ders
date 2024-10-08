@@ -59,6 +59,63 @@ void print_reverse(struct node *head)
     
 }
 
+
+//listenin elemanlarını rekürisf ile sayma
+
+int count_rec(struct node *head)
+{
+
+if(head==NULL)
+return 0;
+else
+return 1+count_rec(head->next); 
+
+
+
+}
+
+
+//iteratif count 
+
+int count(struct node *head)
+{
+    int counter = 0;
+    while(head!=NULL){
+        counter++;
+        head= head->next;
+    }
+    return counter;
+}
+
+
+//listelerde verilen bir değere sahip düğümü silme
+struct node *deletenode(struct node *head, int key){
+if(head!=NULL)
+{
+    struct node *temp = head;
+    if(head->data==key)
+    {
+        head=head->next;
+        free(temp);
+    
+    }
+    else {
+        while(temp -> next -> data!= key)
+            temp = temp->next;
+    
+        struct node *del = temp -> next;
+        temp ->next = del->next;
+        free(del);
+    
+    }
+
+
+}
+
+
+}
+
+
 int main()
 
 {
@@ -69,4 +126,9 @@ head = addfront (head,5);
 head = addlast (head,2);
 printlist(head);
 print_reverse(head);
+int a = count_rec(head);
+printf("%d",a);
+deletenode(head, 2);
+
+printlist(head);
 }
