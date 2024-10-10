@@ -17,9 +17,17 @@ struct node *head = NULL;
 
 
 
+//menu tanımlamaları
+int secim1,secim2,secim3,secim4,secim5;
+
+
 while(1)
 {
-printf("Menu\n 1-)");
+
+printf("Menu\n 1-)b");
+printf("")
+scanf("%d",&secim1);
+
 
 
 
