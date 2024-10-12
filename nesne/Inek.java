@@ -1,7 +1,7 @@
 public class Inek extends Hayvan
 {
 
-//@override
+@Override
 public void ses()
 {
     System.out.print("mö");

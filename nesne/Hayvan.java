@@ -12,7 +12,7 @@ public String getAd()
 
 public void setAd(String yeniAd)
 {
-    ad=yeniAd;
+    ad = yeniAd;
 }
 
 }
