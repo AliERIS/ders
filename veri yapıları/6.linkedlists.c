@@ -133,22 +133,31 @@ int secim;
         
         
         case 1:
-        printf("Önüne eklenecek veriyi yazin");
+        printf("Önüne eklenecek veriyi yazin\n");
         scanf("%d",&x);
         head = addfront(head, x);
         break;
 
         case 2:
-        printf("listenin sonuna eklenecek veriyi yazin");
+        printf("listenin sonuna eklenecek veriyi yazin\n");
         scanf("%d",&x);
         head = addlast(head , x);
         break;
 
         case 3:
-        printf("listeyi yaz");
+        printf("listeyi yaz\n");
         printlist(head);
         break;
 
+        case 4:
+        printf("listeyi tersten yaz\n");
+        print_reverse(head);
+        break;
+
+        case 5:
+        printf("listenin elemanlarını say\n");
+        print("düğümün sayısı: %d",count_rec);
+        break;
         
 
 
