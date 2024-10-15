@@ -42,7 +42,7 @@ void printlist(struct node *head)
     {
         while (head!=NULL)
         {
-            printf("%d",head->data);
+            printf("%d ",head->data);
             head =head -> next;
         }
     }
@@ -108,10 +108,8 @@ if(head!=NULL)
         free(del);
     
     }
-
-
 }
-
+return head;
 
 }
 
@@ -121,14 +119,62 @@ int main()
 {
     printf("linked-list");
 struct node *head = NULL;
-head = addlast (head,8);
-head = addfront (head,5);
-head = addlast (head,2);
-printlist(head);
-print_reverse(head);
-int a = count_rec(head);
-printf("%d",a);
-deletenode(head, 2);
+int secim;
 
-printlist(head);
+    while(1)
+    {
+
+    
+    printf("\n1-)listenin önüne eleman ekle \n2-) listenin sonuna eleman ekle \n3-)listeyi yazdir \n4-)Listeyi tersten yazdır \n5-)Listenin elemanlarını say \n6-)listenin elemanını sil \n10-)QUIT");
+    scanf("%d",&secim);
+    int x;
+    switch(secim)
+    {
+        
+        
+        case 1:
+        printf("Önüne eklenecek veriyi yazin");
+        scanf("%d",&x);
+        head = addfront(head, x);
+        break;
+
+        case 2:
+        printf("listenin sonuna eklenecek veriyi yazin");
+        scanf("%d",&x);
+        head = addlast(head , x);
+        break;
+
+        case 3:
+        printf("listeyi yaz");
+        printlist(head);
+        break;
+
+        
+
+
+
+
+    }
+
+    }
+
+
+
+
+
+
+
+
+
+
+// head = addlast (head,8);  kısayolu cmd + shift + 7
+// head = addfront (head,5);
+// head = addlast (head,2);
+// printlist(head);
+// print_reverse(head);
+// int a = count_rec(head);
+// printf("%d",a);
+// head = deletenode(head, 2);
+
+// printlist(head);
 }
