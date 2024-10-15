@@ -97,7 +97,7 @@ if(head!=NULL)
     {
         head=head->next;
         free(temp);
-    
+     
     }
     else {
         while(temp -> next -> data!= key)
@@ -112,6 +112,26 @@ if(head!=NULL)
 return head;
 
 }
+
+
+// listeyi komple silmek
+// struct node *destroy(struct node *head)
+// {
+// if(head==NULL)
+// {
+//     printf("liste zaten boş");
+// }
+// else
+// {
+//     head = head -> next;
+//     head = destroy(head);
+//     free(head);
+// }
+
+
+
+// }
+
 
 
 int main()
@@ -156,7 +176,7 @@ int secim;
 
         case 5:
         printf("listenin elemanlarını say\n");
-        print("düğümün sayısı: %d",count_rec);
+        printf("düğümün sayısı: %d",count_rec(head));
         break;
         
 
