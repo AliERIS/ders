@@ -1,7 +1,7 @@
 public class Kopek extends Hayvan
 {
 
-//@override 
+@Override 
 public void ses()
 {
 
