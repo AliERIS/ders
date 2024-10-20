@@ -49,6 +49,28 @@ void printlist(struct node *head)
 }
 
 
+
+void printadress(struct node *head)
+{
+    if(head==NULL)
+    printf("liste bos");
+    else
+    {  
+        while(head!=NULL)
+        {
+            printf("%p ",head->next);
+            head =head ->next;
+        }
+    }
+
+
+
+
+
+}
+
+
+
 //listenin elemanlarını tersten yazma
 void print_reverse(struct node *head)
 {
@@ -149,17 +171,57 @@ struct node *fonk(struct node *head)
     free(head->next);
     printf("%d",head->data);
     
-    
-
-        
-    
-
     return head;
 
 }
 
 
 
+
+//chatgptden aldığım özyinelemeli silme metodu çalışıyor tabi
+struct node *destroy(struct node *head) {
+    // Eğer liste boşsa, hiçbir şey yapma
+    if (head == NULL) {
+        return NULL;  // NULL döndür
+    }
+    
+    // Önce bir sonraki düğümü serbest bırak
+    head->next = destroy(head->next);
+    
+    // Şu anki düğümü serbest bırak
+    free(head);
+    
+    // NULL döndür
+    return NULL; // Listenin başı artık yok, NULL döndür
+}
+
+
+//derste yazılan iteratif olarak tüm düğümleri silme
+struct node *destroy2(struct node *head)
+{
+    struct node *temp =head;
+
+        while(head!=NULL){
+           
+            //printlist(temp);
+            printlist(head);
+            printadress(head);
+            
+            head=head->next;
+          
+
+
+            free(temp);
+            temp=head;
+        }
+        
+
+
+
+
+
+
+}
 
 
 
@@ -180,9 +242,9 @@ int secim;
 head=addlast(head,4);
 head=addlast(head,8);
 head=addlast(head,15);
-head=addlast(head,16);
-head=addlast(head,23);
-head=addlast(head,42);
+// head=addlast(head,16);
+// head=addlast(head,23);
+// head=addlast(head,42);
 
 
     while(1)
@@ -232,7 +294,13 @@ head=addlast(head,42);
         //printf("Listeyi silmek");
         head=fonk(head);
         break;
-
+        //chatgpt case-8
+        case 8:
+        head=destroy(head);
+        break;
+        case 9:
+        head=destroy2(head);
+        break;
 
 
     }
