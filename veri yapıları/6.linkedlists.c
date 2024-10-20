@@ -128,6 +128,41 @@ return head;
 //     free(head);
 // }
 
+//listeyi komple silmek denemek 2 
+
+
+
+//abi bu fonksiyon çalışmıyor şimdi hatta listenin de içinden geçiyor çok derinden incelenmesi lazım
+struct node *fonk(struct node *head)
+{
+
+
+
+    if(head->next -> next != NULL)
+    {
+        fonk(head->next);
+        
+
+    }
+        
+    printf("işlem yapılıyor %d \n",head->next->data);
+    free(head->next);
+    printf("%d",head->data);
+    
+    
+
+        
+    
+
+    return head;
+
+}
+
+
+
+
+
+
 
 
 // }
@@ -140,6 +175,15 @@ int main()
     printf("linked-list");
 struct node *head = NULL;
 int secim;
+
+
+head=addlast(head,4);
+head=addlast(head,8);
+head=addlast(head,15);
+head=addlast(head,16);
+head=addlast(head,23);
+head=addlast(head,42);
+
 
     while(1)
     {
@@ -155,7 +199,7 @@ int secim;
         case 1:
         printf("Önüne eklenecek veriyi yazin\n");
         scanf("%d",&x);
-        head = addfront(head, x);
+        head = addfront(head , x);
         break;
 
         case 2:
@@ -178,8 +222,16 @@ int secim;
         printf("listenin elemanlarını say\n");
         printf("düğümün sayısı: %d",count_rec(head));
         break;
-        
 
+        case 6:
+        printf("Listeden silinecek elemani yazin ");
+        scanf("%d",&x);
+        head = deletenode(head , x);
+        break;
+        case 7:
+        //printf("Listeyi silmek");
+        head=fonk(head);
+        break;
 
 
 
