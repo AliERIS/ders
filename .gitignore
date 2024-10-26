@@ -1,3 +1,4 @@
 veri yapıları/a.out
 *.class
 *.o
+.vscode/settings.json
