@@ -106,6 +106,12 @@ messi.attack = 1;
 
 struct team Anton;
 struct team WcfBelediye;
+struct team allteams[TEAM_COUNT] = {Anton , WcfBelediye};
+
+Anton.money = 56;
+Anton.reputation = 10;
+WcfBelediye.money = 2;
+WcfBelediye.reputation = 1;
 
 //Anton.name = "Anton FC";
 snprintf(Anton.name, sizeof(Anton.name), "Anton Wanko Hayranları");
@@ -126,10 +132,13 @@ struct league ligler[LEAGUE_COUNT] = {                //Diğer ligleri de burada
 int secim;
 while (1)
 {
+    //printf("%s",Anton.name); bişi denedim
     printf("\n1-)Oyuncu Özelliği gör\n");
     printf("2-)Takım Özelliği gör\n");
     printf("3-)Lig Özelliği gör\n");
     scanf("%d",&secim);
+
+    printf("%s",allteams[0].name);
     switch(secim)
     {
         case 1:
@@ -143,7 +152,15 @@ while (1)
             break;
         
         case 2:
-            printf("coming soon");
+            
+            for(int i=0; i<TEAM_COUNT; i++)
+            {
+                printf("%d %s \n",i+1,allteams[0].name);
+            }
+            scanf("%d",&secim);
+            printf("%s \n Money: %d \n Reputation : %d \n ",allteams[secim-1].name, allteams[secim-1].money, allteams[secim-1].reputation);
+
+
         break;
 
         case 3:
