@@ -157,7 +157,7 @@ while (1)
             {
                 printf("%d %s \n",i+1,allteams[0].name);
             }
-            scanf("%d",&secim);
+            scanf("%d",&secim); 
             printf("%s \n Money: %d \n Reputation : %d \n ",allteams[secim-1].name, allteams[secim-1].money, allteams[secim-1].reputation);
 
 
