@@ -47,8 +47,8 @@ struct node *addlast(struct node *head, int ekle)
     struct node *temp = (struct node *)malloc(sizeof(struct node));
     if(head == NULL) 
     {
-        temp ->next  = head;
-        temp ->prev  = head;
+        temp ->next  = temp;
+        temp ->prev  = temp;
         temp -> data = ekle;
         head = temp;
     }
@@ -72,15 +72,17 @@ int main()
 {
 
 struct node *head = NULL; //Boş Bir Çift Bağlı Liste oluşturdum
-head = addlast(head, 4);
-head = addlast(head, 8);
-head = addlast(head, 15);
-head = addlast(head, 16);
-head = addlast(head, 23);
-head = addlast(head, 42); 
+ head = addlast(head, 4);
+ head = addlast(head, 8);
+ head = addlast(head, 15);
+ head = addlast(head, 16);
+ head = addlast(head, 23);
+ head = addlast(head, 42); 
 //listem son halinde 4-8-15-16-23-42
  
-terstenyazdir(head); //dönmesini beklediğim değer 42 23 16 15 8 4 //benim aldığım dönüt segmentation fault(core dumped)
+terstenyazdir(head); //dönmesini beklediğim değer 42 23 16 15 8 4
+//boş liste olarak çalıştırdığımda sıkıntı yok
+
 
 
 
