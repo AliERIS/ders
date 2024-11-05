@@ -49,6 +49,29 @@ void initialize(struct node *head)
 }
 
 
+//bu ağ yapısını gezip ekrana yazdırmak için bir fonksiyon yazalım
+
+void print(struct node *head)
+{
+    struct node *iter = head;
+    while (iter != NULL)
+    {
+        struct node *iter2 = iter;
+        while (iter2 != NULL)
+        {
+            printf("%d ", iter2->data);
+            iter2 = iter2->right;
+        }
+        printf("\n");
+        iter = iter->down;
+    }
+}   
+
+
+
+
+
+
 int main()
 {
     struct node *head = (struct node *)malloc(sizeof(struct node)); //mantıklı mı bence hayır
