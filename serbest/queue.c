@@ -27,7 +27,6 @@ void initialize(queue *q)
     q->cnt = 0;
     q->front = q->rear = NULL;
 
-
 }
 
 int isFull(queue *q){
@@ -36,7 +35,6 @@ int isFull(queue *q){
         return 1;
     else 
         return 0; 
-
 }
 
 int isEmpty(queue *q){
