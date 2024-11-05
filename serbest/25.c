@@ -3,8 +3,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>  //lazım olabilir diye kütüphane eklemek :D
-
-//he ağ yapısı oluşturayım
+#define WEB_SIZE 50
+// ağ yapısı oluşturayım
 
 struct node {
     int data;
@@ -12,59 +12,63 @@ struct node {
     struct node *down;
     struct node *right;
     struct node *left;
-    int posx, posy; //pozisyonlarını da ekleyeyim
+    int posx, posy; //pozisyonlarını da ekleyeyim sence bu bir node mu 
+
+}; //yaptığım hatayı :(
+
+
+struct web
+{
+    int pos[WEB_SIZE][WEB_SIZE]; //yani aslında 2 boyutlu bir matris ama geçişleri node üzerinden yapıyorum (ama neden) //çok işe yaramadı gibi yoo sen node a x y ekle bunu la listeye ekle ama o zaman neden node yapısı kurasın ki? düşünmek lazım direkt koda girişme
+    struct node *head; //bu da ilk node
+    //struct node *tail; yani gerek var mı? belki sol en alt sağ en alt sol en üst sağ en üstü tutturabilirim
+    struct node *bottomleft;
+    struct node *bottomright;
+    struct node *topleft;
+    struct node *topright;  
 };
 
 
 
-
-//şimdi head mi diyeyim aslında 0,0 ı gösteren bir pointer olmalı yani pointer diyemem de ey copilot
-
-struct node *addright(struct node *cell, int key)
-
+struct node *addright(struct node *n)
 {
-    struct node *temp = (struct node *)malloc(sizeof(struct node));
-    temp->data = key; 
-    temp->up = NULL; //bunu kontrol etmek lazım
-    temp->down = NULL; //bunu da
-    temp->right = NULL; //buna emin olamayız ki belki başka yerden dolaştık
-    temp->left = cell; //bu kesin doğru zaten ama buranın dolu olup olmadığını da bilmem lazım
-    temp->posx = cell-> posx+1;
-    temp->posy = cell-> posy;
-    cell->right = temp;
-    return temp; //eklenen hücrenin pointerını döndürüyorum
+    struct node *newnode = (struct node *)malloc(sizeof(struct node));
+    if(n == NULL)
+    {
+        n = newnode;
+        n->left = NULL;
+        n->right = NULL;   
+        n->up = NULL;
+        n->down = NULL;
+        n->posx = 0;
+        n->posy = 0;
+        return n;
+    }
+
+    else
+    {
+        if(n->right != NULL)
+    {
+        pritnf("right node already exists\n");
+        return n->right;
+    }
+    else {
+        
+        n->right = newnode;
+        newnode->left = n;
+
+        return newnode;
+    }
+    
+    
+    
+    }
+
+    
+    
 }
 
-struct node *addright(struct node *cell, int key)
 
-{
-    struct node *temp = (struct node *)malloc(sizeof(struct node));
-    temp->data = key;
-    temp->up = NULL;
-    temp->down = NULL;
-    temp->right = NULL;
-    temp->left = cell;
-    temp->posx = cell-> posx+1;
-    temp->posy = cell-> posy;
-    cell->right = temp;
-    return temp; //eklenen hücrenin pointerını döndürüyorum
-}
-
-
-
-
-
-
-void initialize(struct node *head)
-{
-    head->data = 0;
-    head->up = NULL;
-    head->down = NULL;
-    head->right = NULL;
-    head->left = NULL;
-    head->posx = 0;
-    head->posy = 0;
-}
 
 
 
@@ -75,42 +79,6 @@ void initialize(struct node *head)
 
 int main()
 {
-    struct node *head = (struct node *)malloc(sizeof(struct node)); //mantıklı mı bence hayır
-    initialize(head);
-
-while(1)
-
-{
-printf("1-Add Right\n2-Add Down\n3-Print\n4-Exit\n");
-int choice;
-scanf("%d", &choice);
-if(choice == 1)
-{
-    int key;
-    printf("Enter the key: ");
-    scanf("%d", &key);
-    head = addright(head, key);
-}
-else if(choice == 3)
-{
-
-
-
-}
-else if(choice == 4)
-{
-    break;
-}
-else
-{
-    printf("Invalid choice\n");
     
-
-
-}
-
-
-}
-    return 0;
 }
 
